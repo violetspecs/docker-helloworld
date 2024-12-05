@@ -6,8 +6,8 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 381492202372.dkr.ecr.ap-southeast-1.amazonaws.com/ecsdemo-rcjdiv02-repo
-      - REPOSITORY_URI=381492202372.dkr.ecr.ap-southeast-1.amazonaws.com/ecsdemo-rcjdiv02-repo
+      - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 050451377953.dkr.ecr.ap-northeast-1.amazonaws.com/ecrdemo-martin
+      - REPOSITORY_URI=050451377953.dkr.ecr.ap-northeast-1.amazonaws.com/ecrdemo-martin
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
